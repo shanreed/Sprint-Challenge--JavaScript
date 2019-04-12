@@ -76,21 +76,15 @@ Once you have the new array created, sort the universities alphabetically and lo
 const universities = ['Missouri Southern State College', 'The School of the Art Institute of Chicago', 'Marian College', 'International Medical & Technological University',
  'Sultan Salahuddin Abdul Aziz Shah Polytechnic', 'Fachhochschule Rosenheim, Hochschule für Technik und Wirtschaft', 'Salem University', 'Coastal Carolina University',
   'Universidad Católica de Ávila', 'Universitat Rovira I Virgili Tarragona']
- // universities.sort();
- function sortedUni(universities){
-  do{
-     for(var i = 1, orderSwap = 0; i < universities.length; i++){
-        if(universities[i - 1]>universities[i]){
-          order = universities[i - 1];
-          universities[i - 1] = universities[i];
-          universities[i] = order; 
-          orderSwap +=1;
-          }
-      }
-  }while(orderSwap>0 ); 
-  return universities; 
-}
-console.log(sortedUni(universities));
+
+
+console.log(universities)
+
+
+
+
+
+
 
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
