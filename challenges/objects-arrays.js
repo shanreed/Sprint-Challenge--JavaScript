@@ -81,7 +81,7 @@ console.log(universities)
 The resulting contact information should have a space between the first name and the email information like this: 
 Name email@example.com
 
-Log the result of your new array. */
+Log the result of your new array. */ 
 const contactInfo = [];
 console.log(contactInfo);
 
