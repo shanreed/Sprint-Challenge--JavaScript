@@ -78,7 +78,6 @@ const universities = ['Missouri Southern State College', 'The School of the Art 
   'Universidad Católica de Ávila', 'Universitat Rovira I Virgili Tarragona']
  // universities.sort();
  function sortedUni(universities){
-  var orderSwap = 0;
   do{
      for(var i = 1, orderSwap = 0; i < universities.length; i++){
         if(universities[i - 1]>universities[i]){
