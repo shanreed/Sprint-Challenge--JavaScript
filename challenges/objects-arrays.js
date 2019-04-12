@@ -73,18 +73,25 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 /* Request 1: Create a new array called universities that contains all the univeristies in the graduates array.  
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
+
 const universities = ['Missouri Southern State College', 'The School of the Art Institute of Chicago', 'Marian College', 'International Medical & Technological University',
- 'Sultan Salahuddin Abdul Aziz Shah Polytechnic', 'Fachhochschule Rosenheim, Hochschule für Technik und Wirtschaft', 'Salem University', 'Coastal Carolina University',
-  'Universidad Católica de Ávila', 'Universitat Rovira I Virgili Tarragona']
-
-
-console.log(universities)
-
-
-
-
-
-
+                      'Sultan Salahuddin Abdul Aziz Shah Polytechnic', 'Fachhochschule Rosenheim, Hochschule für Technik und Wirtschaft', 'Salem University', 'Coastal Carolina University',
+                      'Universidad Católica de Ávila', 'Universitat Rovira I Virgili Tarragona']
+ // universities.sort();
+ function sortedUni(universities){
+  do{
+     for(var i = 1, orderSwap = 0; i < universities.length; i++){
+        if(universities[i - 1]>universities[i]){
+          order = universities[i - 1];
+          universities[i - 1] = universities[i];
+          universities[i] = order; 
+          orderSwap +=1;
+          }
+      }
+  }while(orderSwap>0 ); 
+  return universities; 
+}
+console.log(sortedUni(universities));
 
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
@@ -110,9 +117,12 @@ console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 const uni = [];
-const array = graduates.length;
-    for (let i = 0; i < array; i++) {
-    }
+for (let i = 0; i < graduates.length; i++) {
+  if (graduates[i].university.includes('Uni')){
+    uni.push(graduates[i].university)
+  }
+}
+ 
 console.log(uni);
 
 
