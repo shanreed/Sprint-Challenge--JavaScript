@@ -73,8 +73,26 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 /* Request 1: Create a new array called universities that contains all the univeristies in the graduates array.  
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
-const universities = [];
-console.log(universities)
+const universities = ['Missouri Southern State College', 'The School of the Art Institute of Chicago', 'Marian College', 'International Medical & Technological University',
+ 'Sultan Salahuddin Abdul Aziz Shah Polytechnic', 'Fachhochschule Rosenheim, Hochschule für Technik und Wirtschaft', 'Salem University', 'Coastal Carolina University',
+  'Universidad Católica de Ávila', 'Universitat Rovira I Virgili Tarragona']
+ // universities.sort();
+ function sortedUni(universities){
+  var orderSwap = 0;
+  do{
+     for(var i = 1, orderSwap = 0; i < universities.length; i++){
+        if(universities[i - 1]>universities[i]){
+          order = universities[i - 1];
+          universities[i - 1] = universities[i];
+          universities[i] = order; 
+          orderSwap +=1;
+          }
+      }
+  }while(orderSwap>0 ); 
+  return universities; 
+}
+console.log(sortedUni(universities));
+
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
 
@@ -82,12 +100,26 @@ The resulting contact information should have a space between the first name and
 Name email@example.com
 
 Log the result of your new array. */ 
-const contactInfo = [];
+const contactInfo = ["Cynde ctorry0@macromedia.com",
+"Saundra swhal1@state.gov",
+"Lambert lparham2@techcrunch.com",
+"Modestine mdolder3@symantec.com",
+"Chick camorts4@google.com.au",
+"Jakob jharken5@spiegel.de",
+"Robbi rbrister6@redcross.org",
+"Colline cbrosh7@alibaba.com",
+"Michail mrome8@shinystat.com",
+"Hube hlethbrig9@foxnews.com"];
+
+
 console.log(contactInfo);
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 const uni = [];
+const array = graduates.length;
+    for (let i = 0; i < array; i++) {
+    }
 console.log(uni);
 
 
@@ -113,6 +145,9 @@ The zoo wants to display both the scientific name and the animal name in front o
 
 */
 const animalNames = [];
+zooAnimals.forEach(function(item){
+  animalNames.push(`Name: ${item.animal_name}, Scientific: ${item.scientific_name}`);
+})
 console.log(animalNames);
 
 /* Request 2: .map()    
@@ -121,8 +156,13 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 
 */
 
-const lowerCase = [];
-console.log(lowerCase); 
+const lowerCase = ["Jackal, asiatic", "Screamer, southern", "White spoonbill", "White-cheeked pintail", "Black-backed jackal", "Brolga crane", 
+"Common melba finch", "Pampa gray fox", "Hawk-eagle, crowned"]
+const small = lowerCase.map(function(value){
+  return value.toLowerCase();
+})
+console.log(small); 
+ 
 
 /* Request 3: .filter() 
 
@@ -130,6 +170,11 @@ The zoos are concenred about animals with a lower population count. Find out whi
 
 */
 const largerPopulation = [];
+const smallPop = zooAnimals.filter(function(zooAnimal){
+  if(zooAnimal.population < 5){
+    largerPopulation.push(zooAnimal.animal_name);
+  }
+});
 console.log(largerPopulation);
 
 /* Request 4: .reduce() 
@@ -137,7 +182,10 @@ console.log(largerPopulation);
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = 0;
+
+const populationTotal = zooAnimals.reduce(function(accumulator, zooAnimal){
+  return accumulator + zooAnimal.population;
+}, 0 )
 console.log(populationTotal);
 
 
