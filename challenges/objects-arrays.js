@@ -13,6 +13,9 @@ const dino1 = {
   weight: '7000kg',
   length: '12m',
   period: 'Late Cretaceious',
+  roar: function() {
+    return 'RAWERSRARARWERSARARARRRR!';
+}
 }
 
 // stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic
@@ -42,14 +45,14 @@ console.log(`The ${dino1.name} weighed ${dino1.weight}.`);
 console.log(`The ${dino3.name} was a ${dino3.diet}.`);
 
 // How long was a stegosaurus?
-console.log();
+console.log(`The ${dino2.name} was ${dino2.length}.`);
 
 // What time period did tyrannosaurus live in?
-console.log();
+console.log(`The ${dino1.name} lived in the ${dino1.period}.`);
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-console.log();
+console.log(dino1.roar());
 
 
 // ==== Arrays ====
